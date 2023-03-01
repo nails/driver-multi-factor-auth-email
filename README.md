@@ -1,7 +1,7 @@
-# Stripe Driver for Nails Invoice Module
+# Email Driver for Nails MFA Module
 
 ![license](https://img.shields.io/badge/license-MIT-green.svg)
-[![tests](https://github.com/nails/driver-invoice-stripe/actions/workflows/build_and_test.yml/badge.svg )](https://github.com/nails/driver-invoice-stripe/action
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nails/driver-invoice-stripe/badges/quality-score.png)](https://scrutinizer-ci.com/g/nails/driver-invoice-stripe)
+[![tests](https://github.com/nails/driver-multi-factor-auth-email/actions/workflows/build_and_test.yml/badge.svg )](https://github.com/nails/driver-multi-factor-auth-email/action
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nails/driver-multi-factor-auth-email/badges/quality-score.png)](https://scrutinizer-ci.com/g/nails/driver-multi-factor-auth-email)
 
-This is the "Stripe" driver for the Nails Invoice module, it allows the module to accept payments using the Stripe payment processor.
+This is the "Email" driver for the Nails MFA module, it allows verification codes to be sent via email on login.
