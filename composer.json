@@ -4,7 +4,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "nails/module-multi-factor-auth": "dev-develop"
+        "nails/module-multi-factor-auth": "dev-feature/pre-new-admin"
     },
     "require-dev": {
         "phpunit/phpunit": "9.*",
