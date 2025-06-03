@@ -3,30 +3,38 @@
     "description": "Email MFA Driver for Nails",
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "require": {
+    "require":
+    {
         "nails/module-multi-factor-auth": "dev-feature/pre-new-admin"
     },
-    "require-dev": {
+    "require-dev":
+    {
         "phpunit/phpunit": "9.*",
         "phpstan/phpstan": "1.*"
     },
-    "scripts": {
+    "scripts":
+    {
         "test": "./vendor/bin/phpunit",
         "analyse": "./vendor/bin/phpstan analyse -c .phpstan/config.neon"
     },
-    "autoload": {
-        "psr-4": {
+    "autoload":
+    {
+        "psr-4":
+        {
             "Nails\\MFA\\Driver\\Authentication\\": "src/",
             "Nails\\MFA\\Driver\\Authentication\\Email\\": "src/Email/"
         }
     },
-    "extra": {
-        "nails": {
+    "extra":
+    {
+        "nails":
+        {
             "type": "driver",
             "subType": "authentication",
             "forModule": "nails/module-multi-factor-auth",
             "namespace": "Nails\\MFA\\Driver\\Authentication\\Email\\",
-            "data": {
+            "data":
+            {
                 "namespace": "Nails\\MFA\\Driver\\Authentication\\",
                 "class": "Email"
             }
