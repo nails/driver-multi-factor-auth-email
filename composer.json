@@ -4,6 +4,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
+        "php": ">=8.3",
         "nails/module-multi-factor-auth": "dev-develop"
     },
     "require-dev": {
