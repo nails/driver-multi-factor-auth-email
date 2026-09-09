@@ -2,6 +2,7 @@
 
 namespace Nails\MFA\Driver\Authentication;
 
+use Nails\Auth\Resource\User;
 use Nails\Common\Driver\Base;
 use Nails\Common\Helper\Strings;
 use Nails\Common\Service\UserFeedback;
@@ -13,6 +14,8 @@ use Nails\MFA\Exception\InvalidCodeException;
 use Nails\MFA\Factory\Email\Code;
 use Nails\MFA\Interfaces\Authentication\Driver;
 use Nails\MFA\Resource\Token;
+use Nails\MFA\Resource\UserMethod;
+use stdClass;
 
 class Email extends Base implements Driver
 {
@@ -26,6 +29,13 @@ class Email extends Base implements Driver
     public function getDescription(): string
     {
         return 'Sends a code to the user\'s email address on login.';
+    }
+
+    // --------------------------------------------------------------------------
+
+    public function getSetupDescription(): string
+    {
+        return 'Receive a verification code at your email address when you sign in.';
     }
 
     // --------------------------------------------------------------------------
@@ -81,6 +91,46 @@ class Email extends Base implements Driver
     public function canTryAgain(): bool
     {
         return true;
+    }
+
+    // --------------------------------------------------------------------------
+
+    public function resend(Token $oToken, UserFeedback $oUserFeedback): void
+    {
+        //  Discard the outstanding code so a fresh one is issued and sent
+        $oToken->setData((object) [
+            static::getCodeKey() => null,
+        ]);
+
+        $this->preForm($oToken, $oUserFeedback);
+    }
+
+    // --------------------------------------------------------------------------
+
+    public function requiresEnrollment(): bool
+    {
+        return false;
+    }
+
+    // --------------------------------------------------------------------------
+
+    public function setupStart(User $oUser): stdClass
+    {
+        return (object) [];
+    }
+
+    // --------------------------------------------------------------------------
+
+    public function setupComplete(User $oUser, string $sCode, stdClass $oPending): stdClass
+    {
+        return (object) [];
+    }
+
+    // --------------------------------------------------------------------------
+
+    public function reset(User $oUser, UserMethod $oMethod): void
+    {
+        //  Nothing to clean up
     }
 
     // --------------------------------------------------------------------------
