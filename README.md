@@ -4,3 +4,5 @@
 [![tests](https://github.com/nails/driver-multi-factor-auth-email/actions/workflows/build_and_test.yml/badge.svg )](https://github.com/nails/driver-multi-factor-auth-email/action)
 
 This is the "Email" driver for the Nails MFA module, it allows verification codes to be sent via email on login.
+
+Documentation: [https://docs.nailsapp.co.uk/modules/multi-factor-auth/drivers/email](https://docs.nailsapp.co.uk/modules/multi-factor-auth/drivers/email)
