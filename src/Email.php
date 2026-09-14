@@ -40,6 +40,13 @@ class Email extends Base implements Driver
 
     // --------------------------------------------------------------------------
 
+    public function isEnabled(): bool
+    {
+        return true;
+    }
+
+    // --------------------------------------------------------------------------
+
     public function preForm(Token $oToken, UserFeedback $oUserFeedback): void
     {
         $sExistingCode = $oToken->getData(static::getCodeKey());
