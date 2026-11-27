@@ -2,6 +2,7 @@
 
 namespace Nails\MFA\Driver\Authentication\Email\Settings;
 
+use Nails\MFA\Driver\Authentication\Email\Admin\Permission;
 use Nails\Common\Helper\Form;
 use Nails\Common\Interfaces;
 use Nails\Common\Service\FormValidation;
@@ -35,9 +36,9 @@ class Settings implements Interfaces\Component\Settings
     /**
      * @inheritDoc
      */
-    public function getPermissions(): array
+    public function getPermission(): string
     {
-        return [];
+        return Permission\Settings\Settings::class;
     }
 
     // --------------------------------------------------------------------------
